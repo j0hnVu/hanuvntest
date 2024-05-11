@@ -1,0 +1,14 @@
+[23-Dec-2021 07:26:58 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'shiny' for key 'PRIMARY' in /home/funecfte/public_html/classes/database/glodb.php:79
+Stack trace:
+#0 /home/funecfte/public_html/classes/database/glodb.php(79): PDOStatement->execute()
+#1 /home/funecfte/public_html/classes/glossary.php(38): GloDb->insert()
+#2 /home/funecfte/public_html/glossary/add.php(12): Glossary->add()
+#3 {main}
+  thrown in /home/funecfte/public_html/classes/database/glodb.php on line 79
+[24-Dec-2021 04:00:12 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'cake' for key 'PRIMARY' in /home/funecfte/public_html/classes/database/glodb.php:79
+Stack trace:
+#0 /home/funecfte/public_html/classes/database/glodb.php(79): PDOStatement->execute()
+#1 /home/funecfte/public_html/classes/glossary.php(38): GloDb->insert()
+#2 /home/funecfte/public_html/glossary/add.php(12): Glossary->add()
+#3 {main}
+  thrown in /home/funecfte/public_html/classes/database/glodb.php on line 79

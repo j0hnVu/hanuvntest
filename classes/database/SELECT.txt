@@ -1,0 +1,109 @@
+SELECT DISTINCT
+    `funecfte_articles`.`article`.`id` AS `id`,
+    `funecfte_articles`.`article`.`title` AS `title`,
+    `funecfte_articles`.`article`.`username` AS `username`,
+    `funecfte_articles`.`article`.`time` AS `time`,
+    `funecfte_articles`.`article`.`tag` AS `tag`,
+    `funecfte_articles`.`article`.`preview` AS `preview`,
+    `funecfte_articles`.`article`.`preview2` AS `preview2`,
+    `funecfte_articles`.`article`.`content` AS `content`,
+    (
+    SELECT
+        COUNT(`funecfte_articles`.`comment`.`id`)
+    FROM
+        `funecfte_articles`.`comment`
+    WHERE
+        (
+            `funecfte_articles`.`comment`.`article` = `funecfte_articles`.`article`.`id`
+        )
+) AS `comment`,
+(
+    SELECT
+        COUNT(`funecfte_articles`.`like`.`username`)
+    FROM
+        `funecfte_articles`.`like`
+    WHERE
+        (
+            `funecfte_articles`.`like`.`article` = `funecfte_articles`.`article`.`id`
+        )
+) AS `like`,
+(
+    SELECT
+        COUNT(`funecfte_articles`.`report`.`id`)
+    FROM
+        `funecfte_articles`.`report`
+    WHERE
+        (
+            `funecfte_articles`.`report`.`article` = `funecfte_articles`.`article`.`id`
+        )
+) AS `report`,
+(
+    SELECT
+        `funecfte_articles`.`comment`.`username`
+    FROM
+        `funecfte_articles`.`comment`
+    WHERE
+        (
+            `funecfte_articles`.`comment`.`article` = `funecfte_articles`.`article`.`id`
+        )
+    ORDER BY
+        `funecfte_articles`.`comment`.`time`
+    DESC
+LIMIT 1
+) AS `commentUser`,(
+    SELECT
+        `funecfte_articles`.`comment`.`content`
+    FROM
+        `funecfte_articles`.`comment`
+    WHERE
+        (
+            `funecfte_articles`.`comment`.`article` = `funecfte_articles`.`article`.`id`
+        )
+    ORDER BY
+        `funecfte_articles`.`comment`.`time`
+    DESC
+LIMIT 1
+) AS `commentContent`
+FROM
+    (
+        `funecfte_articles`.`article`
+    JOIN `funecfte_articles`.`comment`
+    )
+ORDER BY
+    `funecfte_articles`.`article`.`id`
+DESC
+________________________________________________________________________________________
+SELECT
+    `funecfte_articles`.`topic`.`topic` AS `tag`,
+    (
+    SELECT
+        COUNT(`funecfte_articles`.`article`.`id`)
+    FROM
+        `funecfte_articles`.`article`
+    WHERE
+        (
+            LOWER(`funecfte_articles`.`article`.`tag`) LIKE CONCAT(
+                '%,',
+                `funecfte_articles`.`topic`.`topic`,
+                ',%'
+            )
+        )
+) AS `number`
+FROM
+    `funecfte_articles`.`topic`
+ORDER BY
+    (
+    SELECT
+        COUNT(`funecfte_articles`.`article`.`id`)
+    FROM
+        `funecfte_articles`.`article`
+    WHERE
+        (
+            `funecfte_articles`.`article`.`tag` LIKE CONCAT(
+                '%,',
+                `funecfte_articles`.`topic`.`topic`,
+                ',%'
+            )
+        )
+)
+DESC

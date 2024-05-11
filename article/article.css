@@ -1,0 +1,424 @@
+.highlighted {
+    background-color: var(--green);
+}
+p.end {
+    height: 10px;
+    margin: 1px;
+}
+hr {
+    margin: 5px 0;
+}
+button:hover {
+    cursor: pointer;
+}
+/*------------------------------------*/
+main {
+    padding: 0;
+    height: calc(100vh - 60px);
+}
+section {
+    resize: horizontal;
+    float: left;
+    overflow: overlay;
+    width: 65%;
+    height: inherit;
+}
+/* width */
+section::-webkit-scrollbar {
+    width: 5px;
+    height: 0;
+}
+/* Track */
+section::-webkit-scrollbar-track {
+    background: transparent;
+} 
+/* Handle */
+section::-webkit-scrollbar-thumb {
+    background: transparent; 
+    border-radius: 5px;
+}
+section::-webkit-scrollbar-thumb:hover {
+    background: #8EBED4;
+}
+article {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin: 20px 10px;
+    position: relative;
+}
+article>h1 {
+    text-align: center;
+    background-color: var(--light-blue);
+    color: var(--black-blue);
+    border-radius: var(--radius);
+    font-size: 1.8em;
+    padding: 10px 40px;
+    margin: 0;
+    width: calc(100% - 80px);
+}
+#tools {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    z-index: 10;
+}
+#tools button {
+    background-color: transparent;
+    border: 0;
+    opacity: 0.6;
+}
+#tools button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+#tools img {
+    height: 25px;
+}
+#info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: var(--gray);
+    font-style: italic;
+    text-align: right;
+}
+#info+div {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: solid 1px gray;
+    border-top: solid 1px gray;
+    margin: 7px 0;
+    padding: 5px;
+}
+#info+div button {
+    background-color: white;
+    border: none;
+    min-width: 160px;
+    max-width: 40%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray);
+}
+#info+div button:hover {
+    cursor: pointer;
+    background-color: var(--button-gray);
+}
+div.comment {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+}
+div.comment>img {
+    height: 25px;
+    margin-right: 10px;
+}
+div.comment>div {
+    background-color: var(--light-gray);
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+div.comment:first-child>div {
+    flex-grow: 2;
+}
+div.comment:first-child>button {
+    padding: 8px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    align-self: flex-end;
+}
+div.comment:first-child>button:hover {
+    cursor: pointer;
+    background-color: var(--light-gray);
+}
+div.comment textarea {
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    background-color: transparent;
+    padding: 0;
+}
+[onclick="moreComment()"] {
+    color: var(--gray);
+}
+[onclick="moreComment()"]:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+span.learned {
+    color: var(--dark-red);
+    font-weight: 600;
+}
+span.learned:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+/*------------------------------------*/
+#dict {
+    resize: none;
+    float: none;
+    width: initial;
+}
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+}
+.pulsate {
+    animation: pulsate infinite 2s;
+}
+article#search {
+    align-items: center;
+    background-color: var(--light-blue);
+}
+#search>h1 {
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+#search>div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 35px;
+    min-width: 70%;
+    max-width: 90%;
+    box-shadow: 0 0 10px -5px #284664;
+    border-radius: 25px;
+    margin: 0 0 15px 0 !important;
+}
+#search>div>* {
+    height: 35px;
+    border: 0;
+    background-color: white;
+}
+#search input {
+    font-size: 18px;
+    font-family: system-ui;
+    width: calc(100% - 100px);
+    padding: 0 5px;
+}
+#lang {
+    width: 60px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#lang>img {
+    border-radius: 25px;
+}
+#searchButton {
+    width: 40px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+/*------------------------------------*/
+#dict main {
+    display: block;
+    height: fit-content;
+}
+#dict article>div {
+    margin-right: 10px;
+}
+#dict h2 {
+    font-size: 1.7em;
+    margin: 0;
+    padding: 5px 0 5px 15px;
+    color: var(--black-blue);
+    background-color: var(--light-yellow);
+    border-radius: var(--radius);
+}
+#dict h2:hover {
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+span.category {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    color: gray;
+}
+p.pronun {
+    font-size: 17px;
+    margin: 5px 15px;
+    font-weight: 400;
+}
+button.pronun {
+    border: 0;
+    background-color: #47628e;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    border-radius: 50%;
+}
+button.pronun:hover {
+    background-color: #6aa0dc;
+    cursor: pointer;
+    box-shadow: 0 0 10px -3px #284664;
+}
+#dict h3 {
+    font-size: 18px;
+    margin: 15px 5px 5px 25px;
+    font-weight: 600;
+}
+p.notes {
+    font-size: 17px;
+    margin: 5px 5px 5px 45px;
+    color: gray;
+}
+p.eg {
+    font-size: 17px;
+    font-style: italic;
+    margin: 5px 5px 5px 45px;
+}
+p.eg::before {
+    content: '\2023 \A0 \A0';
+    color: #c97230;
+    font-style: normal;
+    font-weight: 1000;
+}
+p.goto {
+    text-decoration: none;
+    font-size: 17px;
+    margin: 5px 5px 5px 45px;
+    color: #004aac;
+}
+p.goto:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+p.goto::before {
+    content: '\2937 \A0';
+    color: #c97230;
+    font-style: normal;
+}
+p.syn {
+    margin: 5px 5px 5px 60px;
+}
+button.syn {
+    margin: 3px 5px 5px 55px;
+    padding: 0 6px 4px 6px;
+    border: 0;
+    font-size: 16px;
+    font-family: system-ui;
+    font-weight: 400;
+    background-color: #cce4ff;
+}
+button.syn:hover {
+    background-color: #365691;
+    color: white;
+    box-shadow: 0 0 10px -3px #284664;
+    cursor: pointer;
+}
+/*------------------------------------*/
+#dict_ev {
+    box-shadow: none;
+    margin: 0 0 0 15px;
+}
+#dict table {
+    border: 0;
+}
+#dict td {
+    display: contents;
+}
+#dict tr#tl {
+    display: block;
+    margin: 10px 0 0 0;
+    font-size: 20px; 
+}
+#dict tr#mn {
+    display: block;
+    margin: 5px 0 0 15px;
+    font-size: 18px;
+    font-weight: 600; 
+}
+#dict tr#mh {
+    display: block;
+    margin: 5px 0 0 30px;
+}
+#dict tr#mh::before {
+    content: '\2023 \A0';
+    color: #c97230;
+    font-style: normal;
+    font-weight: 1000;
+}
+#dict tr#mh font {
+    color: black;
+    font-style: italic;
+    font-size: 17px;
+}
+#dict tr#mh_n {
+    display: block;
+    margin: 0 0 0 42px;
+    font-size: 17px;
+    font-style: italic;
+}
+/*------------------------------------*/
+#right h2 {
+    background-color: #fae7e7;
+}
+#right h2:hover {
+    background-color: #fedbdb;
+}
+#right p.goto {
+    margin: 5 5 5 25;
+}
+#images img {
+    width: 100%;
+    border-radius: 5px;
+}
+#images img:hover {
+    opacity: 0.7;
+}
+#images a {
+    width: calc(50% - 20px);
+    margin: 10px;
+}
+#images > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 0!important;
+}
+/*------------------------------------*/
+@media only screen and (max-width: 700px) {
+
+body>main>section {
+    width: 100%;
+    height: 50%;
+    float: none;
+    resize: none;
+}
+body>main>section:first-child {
+    box-shadow: #aaa 0 1px 4px 2px;
+    position: relative;
+    z-index: 2;
+}
+#warn {
+    display: flex;
+}
+#warn+div {
+    display: block;
+}
+[style='margin: 15px; white-space: pre-wrap;'] iframe {
+    width: 100%;
+}
+
+}
