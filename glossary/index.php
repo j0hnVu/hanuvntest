@@ -15,13 +15,12 @@ $glossary->get();
 	<?php require "$root/0/nav.php"?>
 	<main>
 		<article>
-			<h1>Do you want to practice?</h1>
+			<h1>Glossary Tests</h1>
 			<div style="display: none;">
 				<section>
 					<a href="/practice/fill">Fill in the blank</a>
 					<a href="/practice/choice">Multiple choices</a>
 					<a href="/practice/connect">Connect phrase - meaning</a>
-					<a href="/practice/choice">Tests</a>
 				</section>
 			</div>
 		</article>
@@ -71,13 +70,12 @@ $glossary->get();
 	<?php require "$root/0/nav.php"?>
 	<main>
 	    <article>
-			<h1>Do you want to practice?</h1>
+			<h1>Glossary Tests</h1>
 			<div style="display: none;">
 				<section>
 					<a href="">Fill in the blank</a>
 					<a href="">Connect phrase - meaning</a>
 					<a href="">Multiple choices</a>
-					<a href="">Tests</a>
 				</section>
 			</div>
 		</article>
@@ -87,51 +85,6 @@ $glossary->get();
     					<th>Meaning</th>
     					<th>Note</th>
     					<th>Action</th>
-  					</tr>
-  					<tr>
-    					<td>recipe</td>
-    					<td>a set of instructions for preparing a particular dish, including a list of the ingredients required (= cooking directions)</td>
-    					<td>We also have a few birthday cake recipes for celebratory occasions.</td>
-    					<td>
-			  				<button title="edit" class="edit"><img src="icon/pen.svg" height="20px"></button>
-			  				<button title="remove" class="remove"><img src="icon/remove.svg" height="20px"></button>
-			  			</td>
-  					</tr>
-  					<tr>
-    					<td>showy</td>
-    					<td>having a striking appearance or style, typically by being excessively bright, colourful, or ostentatious</td>
-    					<td>You can choose a slightly showier recipe, like a chocolaty devil's food cake.</td>
-    					<td>
-			  				<button title="edit" class="edit"><img src="icon/pen.svg" height="20px"></button>
-			  				<button title="remove" class="remove"><img src="icon/remove.svg" height="20px"></button>
-			  			</td>
-  					</tr>
-  					<tr>
-    					<td>grease</td>
-    					<td>to put fat or oil on something</td>
-    					<td>Most recipes call for greasing and flouring the pan.</td>
-    					<td>
-			  				<button title="edit" class="edit"><img src="icon/pen.svg" height="20px"></button>
-			  				<button title="remove" class="remove"><img src="icon/remove.svg" height="20px"></button>
-			  			</td>
-  					</tr>
-  					<tr>
-    					<td>coarse</td>
-    					<td>rough and not smooth or soft, or not in very small pieces</td>
-    					<td>When a cake bakes too quickly it can develop tunnels and cracks, too slowly and it can be coarse.</td>
-    					<td>
-			  				<button title="edit" class="edit"><img src="icon/pen.svg" height="20px"></button>
-			  				<button title="remove" class="remove"><img src="icon/remove.svg" height="20px"></button>
-			  			</td>
-  					</tr>
-  					<tr>
-    					<td>batter</td>
-    					<td>a mixture of flour, eggs, and milk, used to make pancakes or to cover food before frying it</td>
-    					<td>The ingredients are equally distributed throughout the batter.</td>
-    					<td>
-			  				<button title="edit" class="edit"><img src="icon/pen.svg" height="20px"></button>
-			  				<button title="remove" class="remove"><img src="icon/remove.svg" height="20px"></button>
-			  			</td>
   					</tr>
   					<tr>
 					  	<td><textarea class="phrase" spellcheck="false" rows="1" required></textarea></td>

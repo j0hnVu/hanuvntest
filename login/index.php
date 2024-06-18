@@ -18,7 +18,7 @@ require_once 'google/vendor/autoload.php';
 $client = new Google_Client();
 $client->setClientId('648524630853-9ak71jmfkq7en20fm23fsr7evk2t7u5b.apps.googleusercontent.com');
 $client->setClientSecret('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');
-$client->setRedirectUri('https://fune.cf/login/');
+$client->setRedirectUri('https://localhost/login/');
 $client->addScope("email");
 $client->addScope("profile");
 $gg = true;
@@ -51,10 +51,6 @@ if (isset($_GET['code'])) {
 		<img src="/icon/hanu.png" height="60px">
 		<input type="email" name="email" placeholder="Email" required>
 		<input type="password" name="password" placeholder="Password" required>
-		<a href="<?= $client->createAuthUrl()?>" id="google">
-			<img src="/icon/google.svg">
-			<span>Log in with Google</span>
-		</a>
 		<input type="submit" value="Log in" id="submit">
 		<?php if ($_SERVER["REQUEST_METHOD"] === "POST"):?>
 			<div>Wrong email or password!</div>

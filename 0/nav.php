@@ -36,27 +36,6 @@ function ok() {
 	$("#warn").fadeOut("fast");
 	$("#warn+div").fadeOut("fast");
 }
-function fullscreen() {
-	if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
-		if (document.documentElement.requestFullscreen)
-			document.documentElement.requestFullscreen();
-		else if (document.documentElement.msRequestFullscreen)
-			document.documentElement.msRequestFullscreen();
-		else if (document.documentElement.mozRequestFullScreen)
-			document.documentElement.mozRequestFullScreen();
-		else if (document.documentElement.webkitRequestFullscreen)
-			document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-	} else {
-		if (document.exitFullscreen)
-			document.exitFullscreen();
-		else if (document.msExitFullscreen)
-			document.msExitFullscreen();
-		else if (document.mozCancelFullScreen)
-			document.mozCancelFullScreen();
-		else if (document.webkitExitFullscreen)
-			document.webkitExitFullscreen();
-	}
-}
 String.prototype.trimAny = function (chars) {
     var start = 0, 
         end = this.length;
@@ -69,11 +48,10 @@ String.prototype.trimAny = function (chars) {
 </script>
 <nav>
 	<div>
-		<img src="/icon/hanu.png" width="43px" onclick="fullscreen()">
+		<a href="/"><img src="/icon/hanu.png" width="50px"></a>
 	</div>
 	<div>
 		<a href="/" title="Home"><img src="/icon/home.svg" height="25px"></a>
-		<a href="/dict/" title="Dictionary"><img src="/icon/dict.svg" height="25px"></a>
 		<a href="/glossary/" title="Glossary"><img src="/icon/glossary.svg" height="25px"></a>
 	</div>
 	<div>

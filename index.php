@@ -7,9 +7,6 @@
 </head>
 <?php require "$root/0/nav.php"?>
 <main>
-	<aside>
-		
-	</aside>
 	<div>
 		<div>
 		    <article>
@@ -17,7 +14,7 @@
 					<button title="Search" onclick="search()">
 					    <img src="/icon/search.svg" height="20" width="20">
 				    </button>
-				    <input type="text" placeholder="#cook chocolate">
+				    <input type="text" placeholder="Search something :3">
 				    <button id="mic" title="Voice search">
 					    <img src="/icon/mic.svg" height="20" width="20">
 				    </button>
@@ -26,8 +23,5 @@
 		</div>
 		<div class="loader"></div>
 	</div>
-	<aside>
-		
-	</aside>
 </main>
 <script src="index.js"></script>

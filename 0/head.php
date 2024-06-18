@@ -1,9 +1,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" id="scale">
 <meta property="og:title" content="HANU TESTS">
-<meta property="og:url" content="https://fune.cf">
-<meta property="og:image" content="https://fune.cf/icon/fb.png">
-<meta property="og:description" content="Web App for English learners">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:description" content="HANU Tests">
 <script src="/jquery.js"></script>
 <style>
 :root {

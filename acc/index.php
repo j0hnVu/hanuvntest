@@ -32,14 +32,6 @@ $acc->getInfo();
 		<div class="loader"></div>
 	</div>
 	<aside>
-		<article>
-			<div>
-				<h2>Khảo sát ý kiến</h2>
-				<p>Mọi ý kiến đóng góp đều đáng giá với dự án</p>
-				<p>Hãy tham gia đóng góp ý kiến qua đường link dưới:</p>
-				<p>&#9755; <a href="https://docs.google.com/forms/d/e/1FAIpQLSeiCONVAg42nX7w1jcPHWjTbqpHwCNe8GOuiwyEe6L4cs901w/viewform?usp=sf_link" target="_blank">Google Forms</a></p>
-			</div>
-		</article>
 	</aside>
 </main>
 <script src="acc.js"></script>

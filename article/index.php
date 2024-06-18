@@ -25,71 +25,13 @@ $article = $article->getArt();
 			</h1>
 			<div style="margin: 10px 15px;">
 				<div class="ql-editor"><?= $article->content; ?></div>
-				<div id="info">
-					<div>
-						<span id="like"><?= $article->like; ?></span>
-						<span></span>
-					</div>
-					<div>
-						Posted by <?= $article->username; ?><br>
-						<i><?= $article->time; ?></i>
-					</div>
-				</div>
-				<div>
-					<button onclick="like()">
-						<img src="/icon/like.svg" style="margin:5px 10px 5px 0; height:20px;"> Like
-					</button>
-					<button onclick="$('div.comment textarea').trigger('focus');">
-						<img src="/icon/comment.svg" style="margin:5px 10px 5px 0; height:20px;"> Comment
-					</button>
-				</div>
-				<div>
-					<div class="comment">
-						<img src="/icon/acc2.svg">
-						<div>
-							<textarea spellcheck="false" rows="1" placeholder="Write a comment..."></textarea>
-						</div>
-						<button onclick="comment()">
-							<img src="/icon/send.svg" style="width:0">
-						</button>
-					</div>
-					<?php if(!empty($article->commentUser)): ?>
-					<div class="comment">
-						<img src="/icon/acc2.svg">
-						<div>
-							<b><?= $article->commentUser; ?></b>
-							<div style="white-space: pre-wrap;"><?= $article->commentContent; ?></div>
-						</div>
-					</div>
-					<span onclick="moreComment()">
-						<?php 
-							$comment = $article->comment - 1;
-						    if ($comment > 0)
-						        echo"<i>View</i> <i id='comment'>".$comment."</i><i></i>";
-						?>
-						<i></i>
-					</span>
-					<?php endif; ?>
-				</div>
 			</div>
 		</article>
 	</section>
 	<section id="dict">
 		<article id="search">
-			<h1>ENGLISH DICTIONARY</h1>
-			<div>
-				<button id="lang">
-					<img src="/icon/us.png" id="en-us" height="20" width="40" style="display: none;" title="American English">
-					<img src="/icon/uk.png" id="en-gb" height="20" width="40" title="British English">
-				</button>
-				<input type="text" id="word">
-				<button id="mic" title="Voice search">
-					<img src="/icon/mic.svg" height="20" width="20">
-				</button>
-				<button id="searchButton" title="Search">
-					<img src="/icon/search.svg" height="20" width="20">
-				</button>			
-			</div>
+			<h1>SUBMISSION SECTION
+			</h1>
 		</article>
 		<div style="display: none;">
 			<div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 200px);">
@@ -97,46 +39,6 @@ $article = $article->getArt();
 			</div>
 		</div>
 		<main>
-			<div id="left">
-				<article>
-					<h2>Welcome</h2>
-					<div>
-						<h3>Give it a go</h3>
-						<p class="end"></p>
-					</div>
-				</article>
-			</div>
-			<div id="right">
-				<article id="images">
-					<h2>Images</h2>
-					<div>					
-						<a href="https://en.wikipedia.org/wiki/United_Kingdom" target="_blank">
-							<img src="/icon/uk.png" title="United Kingdom">
-						</a>
-						<a href="https://en.wikipedia.org/wiki/United_States" target="_blank">
-							<img src="/icon/us.png" title="United States">
-						</a>
-					</div>
-				</article>
-				<article id="phrasalVerbs">
-					<h2>Phrasal verbs</h2>
-					<div>
-						<p class="end"></p>
-						</div>
-				</article>
-				<article id="phrases">
-					<h2>Phrases</h2>
-					<div>
-						<p class="end"></p>
-					</div>
-				</article>
-				<article id="history">
-					<h2>History</h2>
-					<div style="display:none;">
-						<p class="end"></p>
-					</div>
-				</article>
-			</div>
 		</main>
 	</section>
 </main>
@@ -179,14 +81,6 @@ $( () => {
 			$(this).attr("title",title);
 		})
 	}
-	<?php 
-		$like = new Like();
-		$like->setUsername($_SESSION['username']);
-		$like = $article->checkLike($like);
-		if ($like)
-			echo '$(`[onclick="like()"]>img`).attr("src","/icon/like2.svg");
-				$(`[onclick="like()"]`).css("color","var(--dark-blue)");';
-	?>
 	showData = function(data) {
 		let obj = JSON.parse(data);
 		console.log(obj);
